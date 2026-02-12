@@ -11,13 +11,11 @@ app = FastAPI(title="LocalFind Backend")
 
 import os
 
-# Get allowed origins from env var (comma-separated), default to "*" if not set
-# In production, you should set this to your Vercel frontend URL
 allowed_origins_env = os.getenv("ALLOWED_ORIGINS")
 if allowed_origins_env:
     origins = [origin.strip() for origin in allowed_origins_env.split(",")]
 else:
-    origins = ["*"] # Default to allow all if not specified (for dev/testing)
+    origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
