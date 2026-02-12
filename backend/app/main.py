@@ -9,10 +9,15 @@ app = FastAPI(title="LocalFind Backend")
 # CORS CONFIG
 # --------------------------------------------------
 
-origins = [
-    "http://localhost:8080",
-    "http://127.0.0.1:8080",
-]
+import os
+
+# Get allowed origins from env var (comma-separated), default to "*" if not set
+# In production, you should set this to your Vercel frontend URL
+allowed_origins_env = os.getenv("ALLOWED_ORIGINS")
+if allowed_origins_env:
+    origins = [origin.strip() for origin in allowed_origins_env.split(",")]
+else:
+    origins = ["*"] # Default to allow all if not specified (for dev/testing)
 
 app.add_middleware(
     CORSMiddleware,
