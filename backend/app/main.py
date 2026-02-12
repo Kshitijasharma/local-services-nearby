@@ -15,7 +15,7 @@ allowed_origins_env = os.getenv("ALLOWED_ORIGINS")
 if allowed_origins_env:
     origins = [origin.strip() for origin in allowed_origins_env.split(",")]
 else:
-    origins = ["*"]
+    origins = ["local-services-nearby-74auz9bvh-kshitija-s-projects.vercel.app"]
 
 app.add_middleware(
     CORSMiddleware,
