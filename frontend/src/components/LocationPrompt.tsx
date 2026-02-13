@@ -99,7 +99,7 @@ export const LocationPrompt = memo(function LocationPrompt({
         {/* Hero Heading */}
         <h1 className="max-w-4xl text-5xl md:text-7xl font-display font-bold tracking-tight text-white mb-6 leading-[1.1]">
           Bring local services <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-gray-400 to-gray-200">
+          <span className="max-w-4xl text-5xl md:text-7xl font-display font-bold tracking-tight text-white mb-6 leading-[1.1]">
             to your doorstep.
           </span>
         </h1>
