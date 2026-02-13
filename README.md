@@ -1,36 +1,147 @@
-## Frontend
+# LocalFind
 
-cd frontend
-npm install  # or bun install (project uses bun)
-npm run dev
+LocalFind is a web application that helps users discover local services and places nearby. It features a modern frontend built with React and a robust backend powered by FastAPI, utilizing Redis for caching and Geoapify for location services.
 
+## 🚀 Features
 
-## Backend
+-   **Place Discovery**: Find local services and places based on location.
+-   **Interactive UI**: Built with React, Tailwind CSS, and Shadcn UI for a premium user experience.
+-   **High Performance**: Backend optimized with FastAPI and Redis caching.
+-   **Location Services**: Integrated with Geoapify for accurate implementation.
 
-Initial setup:
+## 🛠️ Tech Stack
 
+### Frontend
+-   **Framework**: [React](https://react.dev/) with [Vite](https://vitejs.dev/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **UI Components**: [Shadcn UI](https://ui.shadcn.com/) / [Radix UI](https://www.radix-ui.com/)
+-   **State Management**: [TanStack Query](https://tanstack.com/query/latest)
+-   **Language**: TypeScript
+
+### Backend
+-   **Framework**: [FastAPI](https://fastapi.tiangolo.com/)
+-   **Server**: Uvicorn
+-   **Database/Cache**: [Redis](https://redis.io/)
+-   **APIs**: Geoapify
+-   **Language**: Python
+
+## 🏁 Getting Started
+
+### Prerequisites
+
+-   **Node.js** (v18+ recommended) or **Bun**
+-   **Python** (v3.9+ recommended)
+-   **Docker** (optional, for running Redis locally)
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd explore-n
+```
+
+### 2. Backend Setup
+
+Navigate to the backend directory:
+
+```bash
 cd backend
-#python -m venv venv
-venv\Scripts\activate  # On Windows
-# or: source venv/bin/activate (on Mac/Linux)
+```
+
+Create a virtual environment:
+
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Mac/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
-Run the server:
+**Environment Variables:**
+Create a `.env` file in the `backend` directory with the following variables:
 
-uvicorn app.main:app --reload --port 8000
+```env
+GEOAPIFY_API_KEY=your_geoapify_key
+REDIS_URL=redis://localhost:6379
+ALLOWED_ORIGINS=http://localhost:5173
+```
 
-## Run docker which contains redis
+Start Redis (using Docker):
 
-To start Redis in the Docker:
-
+```bash
 docker run -d -p 6379:6379 redis:latest
+```
 
-Docker compose setup:
+Start the Backend Server:
 
-docker-compose up -d
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+The API will be available at `http://localhost:8000`. API docs at `http://localhost:8000/docs`.
 
-## So the complete startup order would be:
+### 3. Frontend Setup
 
-Start Redis: docker run -d -p 6379:6379 redis:latest
-Start Backend: uvicorn app.main:app --reload --port 8000
-Start Frontend: npm run dev
+Open a new terminal and navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+# or
+bun install
+```
+
+**Environment Variables:**
+Create a `.env` file in the `frontend` directory (or use `.env.local`):
+
+```env
+VITE_API_BASE_URL=http://localhost:8000
+```
+
+Start the Development Server:
+
+```bash
+npm run dev
+```
+The application will be running at `http://localhost:5173`.
+
+## 📦 Deployment
+
+This project is configured for deployment on **Vercel** (Frontend) and **Railway** (Backend).
+
+Please refer to [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+
+## 📂 Project Structure
+
+```
+explore-n/
+├── backend/            # FastAPI backend
+│   ├── app/            # Application logic
+│   ├── venv/           # Virtual environment
+│   ├── requirements.txt
+│   └── ...
+├── frontend/           # React frontend
+│   ├── src/            # Source code
+│   ├── public/         # Static assets
+│   ├── package.json
+│   └── ...
+├── DEPLOYMENT.md       # Deployment guide
+└── README.md           # Project documentation
+```
+
+## 📄 License
+
+[MIT License](LICENSE)
