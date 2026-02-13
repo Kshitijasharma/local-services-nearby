@@ -6,21 +6,13 @@ from app.api import places, location
 app = FastAPI(title="LocalFind Backend")
 
 # --------------------------------------------------
-# CORS CONFIG
+# CORS CONFIG (Temporary Debug Version)
 # --------------------------------------------------
-
-import os
-
-allowed_origins_env = os.getenv("ALLOWED_ORIGINS")
-if allowed_origins_env:
-    origins = [origin.strip() for origin in allowed_origins_env.split(",")]
-else:
-    origins = ["https://local-services-nearby-erf7.vercel.app"]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
+    allow_origins=["*"],          # allow all origins temporarily
+    allow_credentials=False,      # must be False when using "*"
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -28,8 +20,6 @@ app.add_middleware(
 # --------------------------------------------------
 # ROUTES
 # --------------------------------------------------
-# Routers already define their own prefixes
-# DO NOT add them again here
 
 app.include_router(places.router)
 app.include_router(location.router)
@@ -43,4 +33,13 @@ def health():
     return {
         "status": "backend running",
         "cors": "enabled"
+    }
+
+# backend running at '/'
+
+@app.get("/")
+def root():
+    return {
+        "status": "backend running at root endpoint",
+        
     }
