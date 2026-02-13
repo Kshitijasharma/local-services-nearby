@@ -141,6 +141,14 @@ explore-n/
 ├── DEPLOYMENT.md       # Deployment guide
 └── README.md           # Project documentation
 ```
+## UML Architecture:
+
+<img width="523" height="789" alt="image" src="https://github.com/user-attachments/assets/c51b8b40-2594-460c-b42a-d162b6ef90fc" />
+
+## Sequence Diagran (Request Flow):
+
+<img width="779" height="475" alt="image" src="https://github.com/user-attachments/assets/ae2cbc4a-3420-49f1-8bc2-ab5d4b4c479d" />
+
 
 ## 📄 License
 
