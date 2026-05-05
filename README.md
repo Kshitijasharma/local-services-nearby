@@ -24,7 +24,7 @@ LocalFind is a web application that helps users discover local services and plac
 -   **Framework**: [FastAPI](https://fastapi.tiangolo.com/)
 -   **Server**: Uvicorn
 -   **Database/Cache**: [Redis](https://redis.io/)
--   **APIs**: Geoapify
+-   **APIs**: [Geoapify](https://www.geoapify.com/)
 -   **Language**: Python
 
 ## 🏁 Getting Started
