@@ -2,8 +2,9 @@
 
 LocalFind is a web application that helps users discover local services and places nearby. It features a modern frontend built with React and a robust backend powered by FastAPI, utilizing Redis for caching and Geoapify for location services.
 
+<img width="953" height="405" alt="image" src="https://github.com/user-attachments/assets/88ae7087-08a8-405c-b08b-5319c1fc682f" />
 
-<img width="869" height="404" alt="2" src="https://github.com/user-attachments/assets/23183005-4e86-4301-b12d-983a8600582e" />
+
 
 ## 🚀 Features
 
