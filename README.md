@@ -1,5 +1,3 @@
-### Update : Removed Redis, as my website doesnot have too much traffic yet to manage and backend needs to be deployed and managed accurately.
-
 # LocalFind
 
 LocalFind is a web application that helps users discover local services and places nearby. It features a modern frontend built with React and a robust backend powered by FastAPI, utilizing Redis for caching and Geoapify for location services.
@@ -151,6 +149,13 @@ explore-n/
 
 <img width="779" height="475" alt="image" src="https://github.com/user-attachments/assets/ae2cbc4a-3420-49f1-8bc2-ab5d4b4c479d" />
 
+## Results:
+
+<img width="869" height="404" alt="2" src="https://github.com/user-attachments/assets/23183005-4e86-4301-b12d-983a8600582e" />
+
+<img width="872" height="404" alt="3" src="https://github.com/user-attachments/assets/abf60b66-2322-4169-bc22-8783bd8b828f" />
+
+<img width="827" height="410" alt="image" src="https://github.com/user-attachments/assets/d9017411-e5fc-4f71-91ef-9eaa876d60f3" />
 
 ## 📄 License
 
